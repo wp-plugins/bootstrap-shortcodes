@@ -1,4 +1,4 @@
-=== DW Shortcodes Bootstrap ===
+=== Bootstrap Shortcodes ===
 Contributors: sinetheta, Designwall Team
 Tags: shortcode, shortcodes, bootstrap, buttons, grid, responsive, widget
 Requires at least: 3.0
