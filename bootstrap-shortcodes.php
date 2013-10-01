@@ -101,7 +101,7 @@ class DesignwallShortcodes{
             <?php settings_fields('dwsc_plugin_options'); ?>
             <?php $options = get_option('dwsc_options'); ?>
             <table class="form-table">
-            
+
                 <tr><td colspan="2"><div style="margin-top:10px;"></div></td></tr>
 
                 <tr valign="top" style="border-top:#dddddd 1px solid;">
