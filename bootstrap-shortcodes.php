@@ -3,7 +3,7 @@
 Plugin Name: Bootstrap Shortcodes
 Plugin URI: https://github.com/TheWebShop/bootstrap-shortcodes
 Description: A simple shortcode generator. Add buttons, columns, toggles and alerts to your theme.
-Version: 1.4.2
+Version: 2.0
 Author: Kevin Attfield 
 Author URI: https://github.com/Sinetheta
 
@@ -18,6 +18,7 @@ require_once('inc/bs_well.php');
 require_once('inc/bs_buttons.php');
 require_once('inc/bs_icons.php');
 require_once('inc/bs_lead.php');
+require_once('inc/bs_tooltip.php');
 
 class BootstrapShortcodes{
 
@@ -29,7 +30,8 @@ class BootstrapShortcodes{
         'wells',
         'buttons',
         'icons',
-        'lead'
+        'lead',
+        'tooltip'
     );
 
     public function __construct() {
@@ -45,12 +47,14 @@ class BootstrapShortcodes{
         $options = get_option('bs_options');
 
         if(!is_admin()){
-            if( isset($options['chk_default_options_css']) && $options['chk_default_options_css'] ){
+            if( isset($options['chk_default_options_css']) && $options['chk_default_options_css'] ) {
                 wp_enqueue_style("bs_bootstrap", plugins_url('css/bootstrap.css', __FILE__ ) );
                 wp_enqueue_style("bs_shortcodes", plugins_url('css/shortcodes.css', __FILE__ ) );
             }
-            if( isset($options['chk_default_options_js']) && $options['chk_default_options_js'] )
-                wp_enqueue_script('bs_bootstrap', plugins_url('js/bootstrap.js', __FILE__ ) ,array('jquery'));
+            if( isset($options['chk_default_options_js']) && $options['chk_default_options_js'] ) {
+                wp_enqueue_script('bs_bootstrap', plugins_url('js/bootstrap.js', __FILE__ ) , array('jquery'));
+            }
+            wp_enqueue_script('bs_init', plugins_url('js/init.js', __FILE__ ) , array('bs_bootstrap'));
         } else {
             wp_enqueue_style("bs_admin_style", plugins_url('css/admin.css', __FILE__ ) );
         }
@@ -103,7 +107,8 @@ class BootstrapShortcodes{
                 "chk_default_options_wells"     => "1",
                 "chk_default_options_buttons"   => "1",
                 "chk_default_options_icons"     => "1",
-                "chk_default_options_lead"      => "1"
+                "chk_default_options_lead"      => "1",
+                "chk_default_options_tooltip"   => "1"
             );
             update_option( 'bs_options', $arr );
     }
@@ -140,7 +145,7 @@ class BootstrapShortcodes{
                         <th scope="row">Twitter Bootstrap Shortcodes</th>
                         <td>
 
-                            <? foreach ($this->shortcodes as &$shortcode): ?>
+                            <?php foreach ($this->shortcodes as &$shortcode): ?>
                             <label>
                                 <input 
                                     name="bs_options[chk_default_options_<?php echo $shortcode; ?>]"
@@ -165,4 +170,3 @@ class BootstrapShortcodes{
     }
 }
 $bscodes = new BootstrapShortcodes();
-= new BootstrapShortcodes();
