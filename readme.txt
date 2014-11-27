@@ -3,7 +3,7 @@ Contributors: sinetheta, beaurixon, no3x, Designwall Team
 Tags: shortcode, shortcodes, bootstrap, buttons, grid, well, responsive, widget
 Requires at least: 3.9
 Tested up to: 4.0
-Stable tag: 3.1.0
+Stable tag: 3.1
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
