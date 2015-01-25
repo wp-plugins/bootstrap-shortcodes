@@ -3,7 +3,7 @@
 Plugin Name: Bootstrap Shortcodes
 Plugin URI: https://github.com/TheWebShop/bootstrap-shortcodes
 Description: A simple shortcode generator. Add buttons, columns, toggles and alerts to your theme.
-Version: 3.0.2
+Version: 3.2.1
 Author: Kevin Attfield
 Author URI: https://github.com/Sinetheta
 
@@ -64,18 +64,6 @@ class BootstrapShortcodes{
             add_filter( 'mce_external_plugins', array( &$this, 'regplugins' ) );
             add_filter( 'mce_buttons_3', array( &$this, 'regbtns' ) );
         }
-        $this->changeFilterPriorities();
-    }
-
-    /**
-     * Change priorities of filters.
-     */
-    function changeFilterPriorities() {
-        /* wpautop will do the work after the shortcodes now.
-        * All shortcodes are registered with default priority (10).
-        */
-        remove_filter( 'the_content', 'wpautop');
-        add_filter( 'the_content', 'wpautop', 12);
     }
 
     function regbtns( $buttons ) {
