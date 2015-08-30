@@ -2,20 +2,42 @@
 Contributors: sinetheta, beaurixon, no3x, Designwall Team
 Tags: shortcode, shortcodes, bootstrap, buttons, grid, well, responsive, widget
 Requires at least: 3.9
-Tested up to: 4.2.3
-Stable tag: 3.3.5
+Tested up to: 4.3
+Stable tag: 3.4.0
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Wordpress plugin to add shortcodes for Twitter Bootstrap 3.0
+Wordpress plugin to add shortcodes for Twitter Bootstrap 3.3
 
 == Description ==
 
+## Latest Bootstrap
+
 Bootstrap Shortcodes allow quick and easy implementation of Twitter Bootstrap components through the TinyMCE rich-editor.
 
-Forked from DW Shortcodes Bootstrap http://wordpress.org/plugins/dw-shortcodes-bootstrap/
+## Supported Shortcodes
 
-Please report issues [here](https://github.com/TheWebShop/bootstrap-shortcodes/issues).
+We add a row of buttons to the bottom of your post editor Visual mode, each of which gives options for inserting Bootstrap's most popular components.
+
+### CSS
+
+* Alerts
+* Buttons
+* Grid (container, row, columns, fully responsive)
+* Icons
+* Labels
+* Lead Text
+* Wells
+
+### JavaScript
+
+* Collapse
+* Tabs
+* Tooltip
+
+## Support
+
+Please report issues directly to our [Github repository](https://github.com/TheWebShop/bootstrap-shortcodes/issues).
 
 == Installation ==
 
@@ -26,7 +48,13 @@ Please report issues [here](https://github.com/TheWebShop/bootstrap-shortcodes/i
 
 == Changelog ==
 
-= 3.3.5 =
+= 3.4.0 =
+* Updated icons to 3.3.5
+* Added control panel popup for inserting alerts.
+* Added option to hide dismiss button in alerts.
+* Added option to display accordions as initially expanded.
+
+= 3.3.0 =
 * Updated Boostrap from 3.3.1 to 3.3.5
 * Add .btn-block as a button "size"
 * Change default column size from xs to sm
@@ -90,3 +118,5 @@ You must toggle the Advanced Editor Toolbar to unlock the Bootstrap Shortcodes i
 5. The grid maker tool to help create custom layouts.
 6. The button maker tool to help setting up your buttons.
 7. The available notifications.
+
+Join the chat at https://gitter.im/TheWebShop/bootstrap-shortcodes
